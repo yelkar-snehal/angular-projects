@@ -1,0 +1,46 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+
+  <h2>Book Info</h2>
+  
+
+</div>
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+    <mat-cell *matCellDef="let book"> {{book.position}} </mat-cell>
+  </ng-container>
+
+  
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+    <mat-cell *matCellDef="let book"> {{book.name}} </mat-cell>
+  </ng-container>
+
+ 
+  <ng-container matColumnDef="author">
+    <mat-header-cell *matHeaderCellDef> Author </mat-header-cell>
+    <mat-cell *matCellDef="let book"> {{book.author}} </mat-cell>
+  </ng-container>
+
+  
+  <ng-container matColumnDef="pages">
+    <mat-header-cell *matHeaderCellDef>Pages </mat-header-cell>
+    <mat-cell *matCellDef="let book"> {{book.pages}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <mat-header-cell *matHeaderCellDef>Price </mat-header-cell>
+    <mat-cell *matCellDef="let book"> {{"Rs." +book.price}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+
+
+
+
