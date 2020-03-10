@@ -1,0 +1,31 @@
+<form class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="Name">Username:</label>
+        <div class="col-sm-10">
+        <input required minlength="5" ngModel name="Name" #name="ngModel" id="Name" (change)="LogChange(name)" type="text" class="form-control">
+      </div>
+        <div class="alert alert-danger" *ngIf="(!name.valid) && name.touched">Name should be at least of 5 characters</div>
+        
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="Name">College Name:</label>
+        <div class="col-sm-10">
+        <input required ngModel name="CName" #name="ngModel" id="CName" (change)="LogChange(name)" type="text" class="form-control">
+      </div>
+        <div class="alert alert-danger" *ngIf="(!name.valid) && (name.dirty || name.touched)">College Name is Compulsory.</div>
+        
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="Name">Password:</label>
+        <div class="col-sm-10">
+        <input required maxlength="7" ngModel name="pw" #name="ngModel" id="pw" (change)="LogChange(name)" type="password" class="form-control">
+      </div>
+        <div class="alert alert-danger" *ngIf="(!name.valid) && (name.dirty || name.touched)">Password should of maximum 7 characters.</div>
+        
+    </div>
+  <div>
+    <button class="btn btn-primary">submit</button>
+  </div>
+</form>
